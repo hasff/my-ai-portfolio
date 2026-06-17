@@ -14,7 +14,7 @@ Portfolio showcase of my AI and machine learning projects. Each project is hoste
 
 ![image](assets/legal-doc-rag-summarizer-1.jpg)
 
-**Tags:** `#rag` `#tutorial` `#step-by-step` `#claude-api` `#bm25` `#huggingface`
+**Tags:** `#rag` `#tutorial` `#step-by-step` `#claude-api` `#bm25` `#huggingface` `streamlit`
 
 ---
 
@@ -42,3 +42,42 @@ Portfolio showcase of my AI and machine learning projects. Each project is hoste
 **Tags:** `#tooluse` `#demo` `#claude-api`
 
 --- 
+
+# [👉 python-pdf-sensitive-data-redactor](https://github.com/hasff/python-pdf-sensitive-data-redactor)
+
+> 🗓️ Status: March 2026
+
+## Automatically detect and permanently redact sensitive personal information from PDF files — text, embedded images, and metadata — using Python and AI.
+
+![image](assets/python-pdf-sensitive-data-redactor-1.jpg)
+
+**Tags:** `#gemini` `#demo` `#pymupdf`
+
+---
+
+# [👉 python-handwritten-ocr-document-generator](https://github.com/hasff/python-handwritten-ocr-document-generator)
+
+> 🗓️ Status: March 2026
+
+## Extract structured data from handwritten images using Google Gemini and export it automatically to PDF, Excel and Word documents.
+
+![image](assets/python-handwritten-ocr-document-generator-1.jpg)
+<p align="center">Handwritten</p>
+
+
+![image](assets/python-handwritten-ocr-document-generator-2.jpg)
+<p align="center">Generated PDF</p>
+
+
+![image](assets/python-handwritten-ocr-document-generator-3.jpg)
+<p align="center">Generated Excel</p>
+
+
+![image](assets/python-handwritten-ocr-document-generator-4.jpg)
+<p align="center">Generated Word</p>
+
+
+**Tags:** `#gemini` `#demo` `#reportlab` `#openpyxl` `#docx`
+
+---
+
