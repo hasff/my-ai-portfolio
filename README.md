@@ -14,7 +14,7 @@ Portfolio showcase of my AI and machine learning projects. Each project is hoste
 
 ![image](assets/legal-doc-rag-summarizer-1.jpg)
 
-**Tags:** `#rag` `#tutorial` `#step-by-step` `#claude-api` `#bm25` `#huggingface` `streamlit`
+**Tags:** `#rag` `#tutorial` `#step-by-step` `#claude-api` `#bm25` `#huggingface` `#streamlit`
 
 ---
 
