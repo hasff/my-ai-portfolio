@@ -64,19 +64,6 @@ Portfolio showcase of my AI and machine learning projects. Each project is hoste
 ![image](assets/p_001/python-handwritten-ocr-document-generator.jpg)
 <p align="center">Handwritten</p>
 
-
-![image](assets/python-handwritten-ocr-document-generator-2.jpg)
-<p align="center">Generated PDF</p>
-
-
-![image](assets/python-handwritten-ocr-document-generator-3.jpg)
-<p align="center">Generated Excel</p>
-
-
-![image](assets/python-handwritten-ocr-document-generator-4.jpg)
-<p align="center">Generated Word</p>
-
-
 **Tags:** `#gemini` `#demo` `#reportlab` `#openpyxl` `#docx`
 
 ---
