@@ -12,7 +12,7 @@ Portfolio showcase of my AI and machine learning projects. Each project is hoste
 
 ## A RAG pipeline that reads legal PDFs, answers questions about them, scores their risk, and simplifies legalese into plain English — built with Python, HuggingFace embeddings, BM25, and the Claude API.
 
-![image](assets/legal-doc-rag-summarizer-1.jpg)
+![image](assets/part_005/legal-doc-rag-summarizer.jpg)
 
 **Tags:** `#rag` `#tutorial` `#step-by-step` `#claude-api` `#bm25` `#huggingface` `#streamlit`
 
