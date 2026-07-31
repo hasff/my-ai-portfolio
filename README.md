@@ -24,7 +24,7 @@ Portfolio showcase of my AI and machine learning projects. Each project is hoste
 
 ## Agentic pipeline that listens to GitHub releases, generates professional release notes with AI, and delivers a PDF to Discord — built with MCP, FastAPI, and the Claude API.
 
-![image](assets/mcp-release-notifier-1.jpg)
+![image](assets/p_004/mcp-release-notifier.jpg)
 
 
 **Tags:** `#mcp` `#modelcontextprotocol` `#tutorial` `#step-by-step` `#claude-api` `#mcp-server` `#mcp-client`
@@ -37,7 +37,7 @@ Portfolio showcase of my AI and machine learning projects. Each project is hoste
 
 ## Extract client data from PDF invoices — name, address, phone, amount owed — and export everything to a formatted Excel file. Automatically. Powered by the Claude API and Tool Use.
 
-![image](assets/claude-invoice-agent-1.jpg)
+![image](assets/p_003/claude-invoice-agent.jpg)
 
 **Tags:** `#tooluse` `#demo` `#claude-api`
 
@@ -49,7 +49,7 @@ Portfolio showcase of my AI and machine learning projects. Each project is hoste
 
 ## Automatically detect and permanently redact sensitive personal information from PDF files — text, embedded images, and metadata — using Python and AI.
 
-![image](assets/python-pdf-sensitive-data-redactor-1.jpg)
+![image](assets/p_002/python-pdf-sensitive-data-redactor.jpg)
 
 **Tags:** `#gemini` `#demo` `#pymupdf`
 
@@ -61,7 +61,7 @@ Portfolio showcase of my AI and machine learning projects. Each project is hoste
 
 ## Extract structured data from handwritten images using Google Gemini and export it automatically to PDF, Excel and Word documents.
 
-![image](assets/python-handwritten-ocr-document-generator-1.jpg)
+![image](assets/p_001/python-handwritten-ocr-document-generator.jpg)
 <p align="center">Handwritten</p>
 
 
