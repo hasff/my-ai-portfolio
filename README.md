@@ -8,7 +8,7 @@ Portfolio showcase of my AI and machine learning projects. Each project is hoste
 
 # [👉 legal-doc-rag-summarizer-v2-hybrid](https://github.com/hasff/legal-doc-rag-summarizer-v2-hybrid)
 
-> 🗓️ Status: June 2026
+> 🗓️ Status: July 2026
 
 ## A hands on RAG tutorial for legal document analysis: this time going hybrid, pairing a local LLM with Claude.
 
