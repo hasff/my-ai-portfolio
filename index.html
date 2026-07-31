@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Portfolio — Hasff</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        // ═══════════════════════════════════════════════
+                        // PALETA DE CORES — FÁCIL DE TROCAR
+                        // Altere os valores hex abaixo para mudar o tema
+                        // ═══════════════════════════════════════════════
+                        bg: {
+                            primary:   '#0a0a0f',   // fundo principal
+                            secondary: '#12121a',   // cards / seções
+                            tertiary:  '#1a1a25',   // hover / elementos
+                        },
+                        accent: {
+                            DEFAULT:   '#22d3ee',   // cor principal (cyan)
+                            hover:     '#67e8f9',   // hover do accent
+                            muted:     '#0891b2',   // versão mais escura
+                        },
+                        text: {
+                            primary:   '#f1f5f9',   // texto principal
+                            secondary: '#94a3b8',   // texto secundário
+                            muted:     '#64748b',   // texto terciário
+                        },
+                        border: {
+                            DEFAULT:   '#27273a',   // bordas
+                            hover:     '#3f3f5a',   // bordas hover
+                        },
+                        tag: {
+                            bg:        '#1e293b',   // fundo das tags
+                            text:      '#cbd5e1',   // texto das tags
+                            border:    '#334155',   // borda das tags
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0a0f;
+            color: #f1f5f9;
+        }
+
+        /* Scrollbar customizada */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0f;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #27273a;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3f3f5a;
+        }
+
+        /* Animações */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeInUp 0.5s ease-out forwards;
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -12px rgba(34, 211, 238, 0.08);
+        }
+
+        /* Gradiente sutil no topo */
+        .hero-gradient {
+            background: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(34, 211, 238, 0.08), transparent);
+        }
+
+        /* Glow no accent */
+        .accent-glow {
+            box-shadow: 0 0 20px rgba(34, 211, 238, 0.15);
+        }
+
+        /* Imagem com overlay gradiente */
+        .img-overlay {
+            background: linear-gradient(to top, rgba(10, 10, 15, 0.9) 0%, transparent 50%);
+        }
+
+        /* Tag ativa */
+        .tag-active {
+            background-color: rgba(34, 211, 238, 0.15) !important;
+            border-color: #22d3ee !important;
+            color: #22d3ee !important;
+        }
+    </style>
+<base target="_blank">
+</head>
+<body class="min-h-screen font-sans antialiased">
+
+    <!-- Hero Section -->
+    <header class="hero-gradient relative overflow-hidden">
+        <div class="max-w-6xl mx-auto px-6 py-20 md:py-28">
+            <div class="flex flex-col items-center text-center">
+                <!-- Avatar / Icon -->
+                <div class="w-20 h-20 rounded-2xl bg-bg-tertiary border border-border flex items-center justify-center mb-8 accent-glow">
+                    <i class="fa-solid fa-robot text-3xl text-accent"></i>
+                </div>
+
+                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-text-primary mb-4">
+                    AI <span class="text-accent">Portfolio</span>
+                </h1>
+
+                <p class="text-lg md:text-xl text-text-secondary max-w-2xl leading-relaxed mb-8">
+                    Showcase of my AI and machine learning projects. From RAG pipelines to agentic workflows — 
+                    built with <span class="text-accent font-medium">Hugging Face</span>, 
+                    <span class="text-accent font-medium">LlamaIndex</span>, and 
+                    <span class="text-accent font-medium">Python</span>.
+                </p>
+
+                <div class="flex items-center gap-3 text-text-muted text-sm">
+                    <i class="fa-brands fa-github"></i>
+                    <span>github.com/hasff</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Controls Section -->
+    <section class="sticky top-0 z-40 bg-bg-primary/80 backdrop-blur-xl border-b border-border">
+        <div class="max-w-6xl mx-auto px-6 py-4">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+
+                <!-- Sort -->
+                <div class="flex items-center gap-3">
+                    <span class="text-text-muted text-sm font-medium uppercase tracking-wider">Sort</span>
+                    <button id="sortBtn" onclick="toggleSort()" 
+                        class="flex items-center gap-2 px-4 py-2 rounded-lg bg-bg-secondary border border-border text-text-primary text-sm font-medium hover:border-border-hover transition-colors">
+                        <i id="sortIcon" class="fa-solid fa-arrow-down-wide-short text-accent"></i>
+                        <span id="sortLabel"></span>
+                    </button>
+                </div>
+
+                <!-- Tag Filter -->
+                <div class="flex items-center gap-3 flex-wrap">
+                    <span class="text-text-muted text-sm font-medium uppercase tracking-wider">FILTER BY</span>
+                    <div id="tagFilters" class="flex flex-wrap gap-2">
+                        <!-- Tags injected via JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <main class="max-w-6xl mx-auto px-6 py-12">
+        <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Cards injected via JS -->
+        </div>
+
+        <!-- Empty State -->
+        <div id="emptyState" class="hidden flex flex-col items-center justify-center py-24 text-center">
+            <div class="w-16 h-16 rounded-full bg-bg-secondary border border-border flex items-center justify-center mb-4">
+                <i class="fa-solid fa-filter text-2xl text-text-muted"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-text-primary mb-2">No projects found.</h3>
+            <p class="text-text-secondary">Remove filters to see more.</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-border mt-12">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-text-muted text-sm">
+                    Built with passion for AI · 
+                    <a href="https://github.com/hasff" target="_blank" class="text-accent hover:text-accent-hover transition-colors">@hasff</a>
+                </p>
+                <div class="flex items-center gap-4">
+                    <a href="https://github.com/hasff" target="_blank" 
+                        class="w-10 h-10 rounded-lg bg-bg-secondary border border-border flex items-center justify-center text-text-muted hover:text-accent hover:border-accent transition-all">
+                        <i class="fa-brands fa-github text-lg"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        
+        const AIs_LOGOS = {
+            'claude': 'assets/powered_by/claude.jpg',
+            'gemini': 'assets/powered_by/gemini.png',
+        };
+
+        // ═══════════════════════════════════════════════
+        // PROJECTS
+        // ═══════════════════════════════════════════════
+        const projects = [
+            {
+                id: 6,
+                title: "legal-doc-rag-summarizer-v2-hybrid",
+                url: "https://github.com/hasff/legal-doc-rag-summarizer-v2-hybrid",
+                date: "2026-07",
+                dateLabel: "July 2026",
+                description: "A hands on RAG tutorial for legal document analysis: this time going hybrid, pairing a local LLM with Claude.",
+                image: "assets/p_006/legal-doc-rag-summarizer-front.jpg",
+                powered_by: "claude",
+                tags: ["rag", "tutorial", "step-by-step", "claude-api", "bm25", "huggingface", "streamlit", "ollama"]
+            },
+            {
+                id: 5,
+                title: "legal-doc-rag-summarizer",
+                url: "https://github.com/hasff/legal-doc-rag-summarizer",
+                date: "2026-06",
+                dateLabel: "June 2026",
+                description: "A RAG pipeline that reads legal PDFs, answers questions about them, scores their risk, and simplifies legalese into plain English — built with Python, HuggingFace embeddings, BM25, and the Claude API.",
+                image: "assets/p_005/legal-doc-rag-summarizer.jpg",
+                powered_by: "claude",
+                tags: ["rag", "tutorial", "step-by-step", "claude-api", "bm25", "huggingface", "streamlit"]
+            },
+            {
+                id: 4,
+                title: "mcp-release-notifier",
+                url: "https://github.com/hasff/mcp-release-notifier",
+                date: "2026-06",
+                dateLabel: "June 2026",
+                description: "Agentic pipeline that listens to GitHub releases, generates professional release notes with AI, and delivers a PDF to Discord — built with MCP, FastAPI, and the Claude API.",
+                image: "assets/p_004/mcp-release-notifier.jpg",
+                powered_by: "claude",
+                tags: ["mcp", "modelcontextprotocol", "tutorial", "step-by-step", "claude-api", "mcp-server", "mcp-client"]
+            },
+            {
+                id: 3,
+                title: "claude-invoice-agent",
+                url: "https://github.com/hasff/claude-invoice-agent",
+                date: "2026-05",
+                dateLabel: "May 2026",
+                description: "Extract client data from PDF invoices — name, address, phone, amount owed — and export everything to a formatted Excel file. Automatically. Powered by the Claude API and Tool Use.",
+                image: "assets/p_003/claude-invoice-agent.jpg",
+                powered_by: "claude",
+                tags: ["tooluse", "demo", "claude-api"]
+            },
+            {
+                id: 2,
+                title: "python-pdf-sensitive-data-redactor",
+                url: "https://github.com/hasff/python-pdf-sensitive-data-redactor",
+                date: "2026-03",
+                dateLabel: "March 2026",
+                description: "Automatically detect and permanently redact sensitive personal information from PDF files — text, embedded images, and metadata — using Python and AI.",
+                image: "assets/p_002/python-pdf-sensitive-data-redactor.jpg",
+                powered_by: "gemini",
+                tags: ["gemini", "demo", "pymupdf"]
+            },
+            {
+                id: 1,
+                title: "python-handwritten-ocr-document-generator",
+                url: "https://github.com/hasff/python-handwritten-ocr-document-generator",
+                date: "2026-03",
+                dateLabel: "March 2026",
+                description: "Extract structured data from handwritten images using Google Gemini and export it automatically to PDF, Excel and Word documents.",
+                image: "assets/p_001/python-handwritten-ocr-document-generator.jpg",
+                powered_by: "gemini",
+                tags: ["gemini", "demo", "reportlab", "openpyxl", "docx"]
+            }
+        ];
+
+        // ═══════════════════════════════════════════════
+        // ESTADO
+        // ═══════════════════════════════════════════════
+        let sortDesc = true; // true = mais recente primeiro
+        let activeTags = new Set();
+
+        // ═══════════════════════════════════════════════
+        // EXTRAIR TODAS AS TAGS ÚNICAS
+        // ═══════════════════════════════════════════════
+        const allTags = [...new Set(projects.flatMap(p => p.tags))].sort();
+
+        // ═══════════════════════════════════════════════
+        // RENDERIZAR FILTROS DE TAG
+        // ═══════════════════════════════════════════════
+        function renderTagFilters() {
+            const container = document.getElementById('tagFilters');
+            container.innerHTML = `
+                <button onclick="toggleTag('all')" 
+                    class="px-3 py-1.5 rounded-full text-xs font-medium border transition-all ${activeTags.size === 0 ? 'tag-active' : 'bg-tag-bg border-tag-border text-tag-text hover:border-border-hover'}">
+                    All
+                </button>
+            `;
+
+            allTags.forEach(tag => {
+                const isActive = activeTags.has(tag);
+                container.innerHTML += `
+                    <button onclick="toggleTag('${tag}')" 
+                        class="px-3 py-1.5 rounded-full text-xs font-medium border transition-all ${isActive ? 'tag-active' : 'bg-tag-bg border-tag-border text-tag-text hover:border-border-hover'}">
+                        #${tag}
+                    </button>
+                `;
+            });
+        }
+
+        // ═══════════════════════════════════════════════
+        // TOGGLE TAG
+        // ═══════════════════════════════════════════════
+        function toggleTag(tag) {
+            if (tag === 'all') {
+                activeTags.clear();
+            } else {
+                if (activeTags.has(tag)) {
+                    activeTags.delete(tag);
+                } else {
+                    activeTags.add(tag);
+                }
+            }
+            renderTagFilters();
+            renderProjects();
+        }
+
+        // ═══════════════════════════════════════════════
+        // TOGGLE SORT
+        // ═══════════════════════════════════════════════
+        function toggleSort() {
+            sortDesc = !sortDesc;
+            const btn = document.getElementById('sortBtn');
+            const icon = document.getElementById('sortIcon');
+            const label = document.getElementById('sortLabel');
+
+            if (sortDesc) {
+                icon.className = 'fa-solid fa-arrow-down-wide-short text-accent';
+                label.textContent = '';
+            } else {
+                icon.className = 'fa-solid fa-arrow-up-wide-short text-accent';
+                label.textContent = '';
+            }
+
+            renderProjects();
+        }
+
+        // ═══════════════════════════════════════════════
+        // RENDERIZAR PROJETOS
+        // ═══════════════════════════════════════════════
+        function renderProjects() {
+            const grid = document.getElementById('projectsGrid');
+            const emptyState = document.getElementById('emptyState');
+
+            // Filtrar
+            let filtered = projects.filter(p => {
+                if (activeTags.size === 0) return true;
+                return [...activeTags].some(tag => p.tags.includes(tag));
+            });
+
+            // Ordenar
+            filtered.sort((a, b) => {
+                const dateA = new Date(a.date + '-01');
+                const dateB = new Date(b.date + '-01');
+                return sortDesc ? dateB - dateA : dateA - dateB;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = '';
+                emptyState.classList.remove('hidden');
+                return;
+            }
+
+            emptyState.classList.add('hidden');
+
+            grid.innerHTML = filtered.map((project, index) => `
+                <article class="card-hover bg-bg-secondary rounded-2xl border border-border overflow-hidden animate-fade-in" 
+                         style="animation-delay: ${index * 0.08}s">
+
+                    <!-- Imagem -->
+                    <a href="${project.url}" target="_blank" class="block relative group">
+                        <div class="aspect-video overflow-hidden bg-bg-tertiary">
+                            <img src="${project.image}" 
+                                 alt="${project.title}" 
+                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                 onerror="this.parentElement.innerHTML='<div class=\'w-full h-full flex items-center justify-center text-text-muted\'><i class=\'fa-solid fa-image text-4xl\'></i></div>'">
+                        </div>
+                        <div class="img-overlay absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                        <!-- Badge de data -->
+                        <div class="absolute top-4 right-4 px-3 py-1 rounded-full bg-bg-primary/80 backdrop-blur-md border border-border text-xs font-medium text-text-secondary">
+                            <i class="fa-regular fa-calendar mr-1.5"></i>${project.dateLabel}
+                        </div>
+
+                        <!-- powered by -->
+                        <div class="absolute bottom-0 left-0 h-5 w-full">
+                            <img src="${AIs_LOGOS[project.powered_by]}" 
+                                alt="${project.powered_by}" 
+                                class="w-full h-full object-contain object-left"
+                                onerror="this.parentElement.style.display='none'">
+                        </div>                    
+                    </a>
+
+                    <!-- Content -->
+                    <div class="p-6">
+                        <a href="${project.url}" target="_blank" 
+                           class="group/link inline-flex items-center gap-2 mb-3">
+                            <h2 class="text-xl font-bold text-text-primary group-hover/link:text-accent transition-colors">
+                                ${project.title}
+                            </h2>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-sm text-text-muted group-hover/link:text-accent transition-colors"></i>
+                        </a>
+
+                        <p class="text-text-secondary text-sm leading-relaxed mb-5">
+                            ${project.description}
+                        </p>
+
+                        <!-- Tags -->
+                        <div class="flex flex-wrap gap-2">
+                            ${project.tags.map(tag => `
+                                <span class="px-2.5 py-1 rounded-md bg-tag-bg border border-tag-border text-tag-text text-xs font-medium">
+                                    #${tag}
+                                </span>
+                            `).join('')}
+                        </div>
+                    </div>                   
+                </article>
+            `).join('');
+        }
+
+        // ═══════════════════════════════════════════════
+        // INIT
+        // ═══════════════════════════════════════════════
+        renderTagFilters();
+        renderProjects();
+    </script>
+</body>
+</html>
