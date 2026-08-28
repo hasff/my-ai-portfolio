@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Portfolio — Hasff</title>
+    <title>AI Portfolio - Hugo Ferro</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,8 +27,8 @@
                             tertiary:  '#1a1a25',   // hover / elementos
                         },
                         accent: {
-                            DEFAULT:   '#22d3ee',   // cor principal (cyan)
-                            hover:     '#67e8f9',   // hover do accent
+                            DEFAULT:   'rgb(43 125 238)',   // cor principal (cyan)
+                            hover:     '#ffffff',   // hover do accent
                             muted:     '#0891b2',   // versão mais escura
                         },
                         text: {
@@ -112,9 +112,13 @@
 
         /* Tag ativa */
         .tag-active {
-            background-color: rgba(34, 211, 238, 0.15) !important;
-            border-color: #22d3ee !important;
-            color: #22d3ee !important;
+            background-color: rgba(90, 141, 234, 0.329) !important;
+            border-color: #318cf3 !important;
+            border-width: 2px !important;
+            color: #d0d8e1 !important;
+            font-weight: 700 !important;
+
+            box-shadow: 0 0 8px #318cf3; /* glow */
         }
     </style>
 <base target="_blank">
@@ -142,17 +146,21 @@
                 </p>
 
                 <div class="flex items-center gap-3 text-text-muted text-sm">
-                    <i class="fa-brands fa-github"></i>
-                    <a href="https://github.com/hasff/" target="_blank" rel="noopener noreferrer">
-                        <span>github.com/hasff</span>
-                    </a>
+                    <div class="hover:text-text-primary">
+                        <i class="fa-brands fa-github"></i>
+                        <a href="https://github.com/hasff/" target="_blank" rel="noopener noreferrer">
+                            <span>github.com/hasff</span>
+                        </a>
+                    </div>
 
                     <span> | </span>
 
-                    <i class="fa-brands fa-linkedin"></i>
-                    <a href="https://www.linkedin.com/in/hugo-ferro-1434b414/" target="_blank" rel="noopener noreferrer">
-                        <span>linkedin.com/in/hugo-ferro</span>
-                    </a>
+                    <div class="hover:text-text-primary">
+                        <i class="fa-brands fa-linkedin"></i>
+                        <a href="https://www.linkedin.com/in/hugo-ferro-1434b414/" target="_blank" rel="noopener noreferrer">
+                            <span>linkedin.com/in/hugo-ferro</span>
+                        </a>
+                    </div>
                 </div>                
             </div>
         </div>
@@ -210,7 +218,7 @@
                 </p>
                 <div class="flex items-center gap-4">
                     <a href="https://github.com/hasff" target="_blank" 
-                        class="w-10 h-10 rounded-lg bg-bg-secondary border border-border flex items-center justify-center text-text-muted hover:text-accent hover:border-accent transition-all">
+                        class="w-10 h-10 rounded-lg bg-bg-secondary border border-border flex items-center justify-center text-text-muted hover:text-text-primary hover:border-text-primary transition-all">
                         <i class="fa-brands fa-github text-lg"></i>
                     </a>
                 </div>
