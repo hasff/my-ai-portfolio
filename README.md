@@ -14,7 +14,7 @@ Portfolio showcase of my AI and machine learning projects. Each project is hoste
 
 ## Side-by-side RAG pipeline comparison between 🔗 LangChain and 🦙 LlamaIndex, chunking, embeddings (OpenAI Embeddings), retrieval and querying.
 
-![image](assets/p_007/rad-under-the-hood.png)
+![image](assets/p_007/rag-under-the-hood.png)
 
 **Tags:** `#rag` `#tutorial` `#step-by-step` `#claude-api` `#bm25` `#huggingface` `#streamlit` `#ollama`
 
