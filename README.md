@@ -8,6 +8,18 @@ Portfolio showcase of my AI and machine learning projects. Each project is hoste
 
 ---
 
+# [👉 rag-under-the-hood](https://github.com/hasff/rag-under-the-hood#rag-under-the-hood)
+
+> 🗓️ Status: September 2026
+
+## Side-by-side RAG pipeline comparison between 🔗 LangChain and 🦙 LlamaIndex, chunking, embeddings (OpenAI Embeddings), retrieval and querying.
+
+![image](assets/p_007/rad-under-the-hood.png)
+
+**Tags:** `#rag` `#tutorial` `#step-by-step` `#claude-api` `#bm25` `#huggingface` `#streamlit` `#ollama`
+
+---
+
 # [👉 legal-doc-rag-summarizer-v2-hybrid](https://github.com/hasff/legal-doc-rag-summarizer-v2-hybrid)
 
 > 🗓️ Status: July 2026
