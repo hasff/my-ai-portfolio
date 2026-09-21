@@ -16,7 +16,7 @@ Portfolio showcase of my AI and machine learning projects. Each project is hoste
 
 ![image](assets/p_007/rag-under-the-hood.png)
 
-**Tags:** `#rag` `#tutorial` `#step-by-step` `#claude-api` `#bm25` `#huggingface` `#streamlit` `#ollama`
+**Tags:** `#rag` `#tutorial` `#step-by-step` `#openai-embeddings` `#langchain` `#llamaindex` 
 
 ---
 
